@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update:php": "COMPOSER=third-party.json composer update && composer update && composer dump-autoload",
+    "manage-updates": "npx --yes npm-check-updates --interactive --format group",
+    "watch": "webpack --mode development --watch --config webpack.config.js",
+    "build": "npm run build:mo && npm run build:js && npm run zip:release",
+    "build:js": "webpack --mode production --config webpack.config.js",
+    "build:mo": "wp i18n make-mo languages && wp i18n make-json --no-purge languages && wp i18n make-php languages",
+    "build:pot": "npx --yes @wp-blocks/make-pot . ./languages/ --exclude=.git,vendor,third-party,node_modules,dist --translation-domains ${npm_package_name} --charset utf-8",
+    "build:strict-release": "npm cache verify && npm ci --force && npm run build",
+    "zip:release": "npx --yes @chrono-meter/wp-zip-package --source-directory=./ --output=./release/",
+    "zip:test": "npx --yes @chrono-meter/wp-zip-package --source-directory=./ --output=./release/test.zip --force",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:e2e": "npm exec playwright install --with-deps && npm exec playwright test --trace on",
+    "test:e2e-strict": "composer update && npm cache verify && npm ci --force && npm run test:e2e"
+  },
+  "extra": {
+    "externalModules": [],
+    "webpackResolvePathes": [],
+    "moduleEntries": {
+      "sample": "./src/sample-app.tsx"
+    }
+  },
+  "dependenciesComments": [
+    "monaco-editor@0.53.0 [Missing requestHandler or method](https://github.com/microsoft/monaco-editor/issues/5310)",
+    "monaco-editor@0.53.0 https://github.com/remcohaszing/monaco-yaml/issues/272"
+  ],
+  "dependencies": {
+    "monaco-editor": "0.52.2",
+    "monaco-yaml": "^5.4.1"
+  },
+  "devDependencies": {
+    "@chrono-meter/wp-playwright-helper": "1.0.1",
+    "@playwright/test": "1.59.1",
+    "@types/node": "25.6.0",
+    "@wordpress/e2e-test-utils-playwright": "1.45.0",
+    "css-loader": "^7.1.4",
+    "file-loader": "^6.2.0",
+    "monaco-editor-webpack-plugin": "^7.1.1",
+    "style-loader": "^4.0.0",
+    "typescript": "6.0.3",
+    "webpack": "^5.106.2",
+    "webpack-cli": "7.0.2"
+  }
+}

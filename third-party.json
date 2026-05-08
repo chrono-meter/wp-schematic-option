@@ -1,0 +1,22 @@
+{
+    "require": {
+        "symfony/yaml": "^6.0",
+        "chrono-meter/wp-declarative-hook": "1.0.1",
+        "swaggest/json-schema": "^0.12.43",
+        "galbar/jsonpath": "^3.0"
+    },
+    "require-dev": {
+        "chrono-meter/composer-plugin-for-wp": "*"
+    },
+    "config": {
+        "vendor-dir": "third-party.tmp",
+        "allow-plugins": {
+            "chrono-meter/composer-plugin-for-wp": true
+        }
+    },
+    "extra": {
+        "scoper": {
+            "prefix": "CmSchematicOption\\Dependency"
+        }
+    }
+}

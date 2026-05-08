@@ -1,0 +1,44 @@
+# Generic ignores
+.DS_Store
+Thumbs.db
+*.tmp
+*.sql
+*.tar.gz
+*.zip
+
+# PHP
+vendor/
+third-party/
+
+# Node modules and build directories
+packages/
+node_modules/
+build/
+dist/
+dist-ssr/
+languages/*.l10n.php
+languages/*.mo
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.phpunit.result.cache
+test-results/
+playwright-report/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
