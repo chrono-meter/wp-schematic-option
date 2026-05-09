@@ -2,7 +2,7 @@
 /*
  * Plugin Name:       wp-schematic-option
  * Description:       A plugin to manage options with a schema.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 6.0
  * Requires PHP:      8.0
  * Author:            Itou Kousuke
@@ -12,6 +12,7 @@
  * Text Domain:       cm_schematic_option
  * Domain Path:       /languages
  * GitHub Plugin URI: https://github.com/chrono-meter/wp-schematic-option
+ * Update URI:        https://github.com/chrono-meter/wp-schematic-option
  */
 // phpcs:disable Universal.Files.SeparateFunctionsFromOO.Mixed
 namespace CmSchematicOption;
