@@ -11,6 +11,7 @@ lastName: Doe
 age: 43
 `
 
+    // https://giacomocerquone.com/notes/monaco-playwright/
     const editor = page.getByRole("code").nth(0);
     await editor.click();
     await page.keyboard.press("ControlOrMeta+KeyA");

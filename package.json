@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "update:php": "COMPOSER=third-party.json composer update && composer update && composer dump-autoload",
+    "update:php": "COMPOSER=third-party.json composer update",
     "manage-updates": "npx --yes npm-check-updates --interactive --format group",
     "watch": "webpack --mode development --watch --config webpack.config.js",
     "build": "npm run build:mo && npm run build:js && npm run zip:release",
@@ -14,7 +14,7 @@
     "zip:test": "npx --yes @chrono-meter/wp-zip-package --source-directory=./ --output=./release/test.zip --force",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test:e2e": "npm exec playwright install --with-deps && npm exec playwright test --trace on",
-    "test:e2e-strict": "composer update && npm cache verify && npm ci --force && npm run test:e2e"
+    "test:e2e-strict": "npm run update:php && npm cache verify && npm ci --force && npm run test:e2e"
   },
   "extra": {
     "externalModules": [],

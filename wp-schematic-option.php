@@ -1,8 +1,8 @@
 <?php
 /*
- * Plugin Name:       Schematic Option
+ * Plugin Name:       wp-schematic-option
  * Description:       A plugin to manage options with a schema.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.0
  * Requires PHP:      8.0
  * Author:            Itou Kousuke
@@ -13,7 +13,7 @@
  * Domain Path:       /languages
  * GitHub Plugin URI: https://github.com/chrono-meter/wp-schematic-option
  */
-//phpcs:disable Universal.Files.SeparateFunctionsFromOO.Mixed
+// phpcs:disable Universal.Files.SeparateFunctionsFromOO.Mixed
 namespace CmSchematicOption;
 
 use CmSchematicOption\Dependency\Symfony\Component\Yaml\Yaml;

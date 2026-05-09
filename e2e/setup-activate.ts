@@ -5,7 +5,7 @@ const test = extendTestWithFixtures(base)
 
 test.describe('Activate Plugin', () => {
     test('should activate the plugin successfully', async ({ requestUtils }) => {
-        await requestUtils.activatePlugin('schematic-option')
+        await requestUtils.activatePlugin('wp-schematic-option')
         await requestUtils.request.dispose()
     })
 })
