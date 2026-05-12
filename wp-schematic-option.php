@@ -2,7 +2,7 @@
 /*
  * Plugin Name:       wp-schematic-option
  * Description:       A plugin to manage options with a schema.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Requires at least: 6.0
  * Requires PHP:      8.0
  * Author:            Itou Kousuke
