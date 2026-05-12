@@ -77,7 +77,7 @@ export default defineConfig({
         screenshot: 'only-on-failure',
     },
 
-    globalSetup: require.resolve('@chrono-meter/wp-playwright-helper/global-setup'),
+    globalSetup: process.env.CI ? undefined : require.resolve('@chrono-meter/wp-playwright-helper/global-setup'),
 
     /* Configure projects for major browsers */
     projects: [

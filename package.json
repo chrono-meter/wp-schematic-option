@@ -5,16 +5,15 @@
     "update:php": "COMPOSER=third-party.json composer update",
     "manage-updates": "npx --yes npm-check-updates --interactive --format group",
     "watch": "webpack --mode development --watch --config webpack.config.js",
-    "build": "npm run build:mo && npm run build:js && npm run zip:release",
     "build:js": "webpack --mode production --config webpack.config.js",
     "build:mo": "wp i18n make-mo languages && wp i18n make-json --no-purge languages && wp i18n make-php languages",
     "build:pot": "npx --yes @wp-blocks/make-pot . ./languages/ --exclude=.git,vendor,third-party,node_modules,dist --translation-domains ${npm_package_name} --charset utf-8",
-    "build:strict-release": "npm cache verify && npm ci --force && npm run build",
     "zip:release": "npx --yes @chrono-meter/wp-zip-package --source-directory=./ --output=./release/",
     "zip:test": "npx --yes @chrono-meter/wp-zip-package --source-directory=./ --output=./release/test.zip --force",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test:e2e": "npm exec playwright install --with-deps && npm exec playwright test --trace on",
-    "test:e2e-strict": "npm run update:php && npm cache verify && npm ci --force && npm run test:e2e"
+    "ci:build": "npm run update:php && npm ci --force && npm run build:js",
+    "ci:test": "sudo wp config set CM_SCHEMATIC_OPTION_TEST true --raw --path=$WP_ABSPATH --allow-root && npm ci --force && npm run test:e2e"
   },
   "extra": {
     "externalModules": [],
